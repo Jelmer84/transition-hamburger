@@ -8,12 +8,11 @@
     position: relative;
     width: var(--menu-bar-width);
     height: var(--menu-bar-height);
-    margin: 100px;
 }
 
 #menu::before,
 #menu::after {
-    background-color: #D84282;
+    background-color: #d84282;
     display: block;
     content: "";
     width: var(--menu-bar-width);
@@ -28,6 +27,51 @@
 
 #menu::after {
     left: 0;
+    top: 20px;
+}
+
+#container {
+    display: block;
+    height: 10px;
+    width: 60px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/*Transitie in*/
+#container:hover #menu {
+    background-color: transparent;
+}
+/*Transitie in*/
+#container:hover #menu::before {
+    transform: rotate(45deg);
+    transition: .8s ease-in-out;
+    top: 0;
+}
+
+/*Transitie in*/
+#container:hover #menu::after {
+    transform: rotate(-45deg);
+    transition: .8s ease-in-out;
+    top: 0;
+}
+
+/*Transitie terug*/
+#container #menu {
+    transition: .8s ease-in-out;
+}
+
+/*transitie terug*/
+#container #menu::before {
+    transform: rotate(0);
+    transition: .8s ease-in-out;
+    bottom: 20px;
+}
+
+/*transitie terug*/
+#container #menu::after{
+    transform: rotate(0);
+    transition: .8s ease-in-out;
     top: 20px;
 }
 
